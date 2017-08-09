@@ -1,0 +1,33 @@
+<% if  @user  %>
+
+
+<% a=@user %> 
+  <p>
+    <%= @user.name %> 
+    <br> 
+
+    <h1> Answers </h1>
+    <% a.answers.each do |answer| %>
+      <%= answer.content %>
+      <br> 
+    <% end %> 
+
+<h1> Posts </h1>
+    <% a.questions.each do |post| %>
+      <a href="/replies/<%=post.id %>"> <%= post.title %></a>
+      <br> 
+    <% end %> 
+
+<% else  %>
+
+
+<% @users %> 
+   
+    <h1> Users </h1>
+    <% @users.each do |user| %>
+      <%= user.name %>
+      <br> 
+    <% end %> 
+
+
+<% end %> 

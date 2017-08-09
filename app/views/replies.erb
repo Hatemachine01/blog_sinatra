@@ -1,0 +1,31 @@
+<h1> <%=@question.title %> </h1>
+<p>  <%=@question.content %> </p>
+<%  id = @question.user_id %> 
+<% author = User.find_by_id(id)%> 
+<b> by <%=author.name  %>  </b>
+<br>
+
+<p>******************************</p>
+
+
+<h2> Responses </h2>
+
+
+
+<%@question.answers.each do |answer|  %>
+	
+	<%= answer.content  %>
+	
+	<%  id = answer.user_id %> 
+	<%	 author = User.find_by_id(id)%> 
+	<br>
+	<b> by <%=author.name  %>  </b>
+	<br>
+	<% end  %>
+
+
+<div id="vista_partial">
+
+<%= erb :_likes, :layout => false %>
+
+</div>

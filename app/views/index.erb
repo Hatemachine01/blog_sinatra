@@ -1,0 +1,33 @@
+
+<link rel="stylesheet" type="text/css" href="/css/main1.css">
+  
+<h1> Welcome to Functional Quora</h1>
+
+<a id="sign_up" href="/sign_on">Sign-up/Log-in</a>
+<a id="sign_up" href="/ask_question">Ask a Question</a>
+
+
+<%if session[:email] %> 
+
+<a id="sign_up" href="/profile"><%= session[:email]%> "My Profile" </a>
+
+  
+  <form action="/logout" method="post">
+    <input type="submit" name="logout" value="Logout">
+  </form>
+
+<% end %> 
+
+
+
+<% if  @data  %>
+
+	<p> <% @data.each do |post| %> </p>
+	<b><%= post.title %> </b> 
+	<br> 
+	<a href="/answer_question/<%=post.id %>"><%= Answer %></a>   <a href="/replies/<%=post.id %>">Replies</a>
+    <% end %>
+<% end %>
+
+
+
