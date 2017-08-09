@@ -6,7 +6,6 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'puma',         '3.9.1'
 # Use Thin for our web server
 gem 'thin'
 
@@ -23,10 +22,6 @@ group :test do
 end
 
 
-group :development, :test do
-
-  gem 'byebug',  '9.0.0', platform: :mri
-end
 
 
 
