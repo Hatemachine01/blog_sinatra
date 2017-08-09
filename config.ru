@@ -11,5 +11,5 @@ configure do
   # Hace un set de las views a:
   set :views, File.join(Sinatra::Application.root, "app", "views")
 end
-
+require './hello'
 run Sinatra::Application
