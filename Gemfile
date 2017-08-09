@@ -6,7 +6,7 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
-
+gem 'puma',         '3.9.1'
 # Use Thin for our web server
 gem 'thin'
 
@@ -20,4 +20,16 @@ gem 'shotgun'
 group :test do
   gem 'faker'
   gem 'rspec'
+end
+
+
+group :development, :test do
+  gem 'sqlite3', '1.3.13'
+  gem 'byebug',  '9.0.0', platform: :mri
+end
+
+
+
+group :production do
+  gem 'pg'
 end
